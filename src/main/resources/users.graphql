@@ -4,6 +4,7 @@ schema {
 
 type Query {
     allUsers: [User]
+    user(id: String): User
 }
 
 type User {
@@ -12,3 +13,4 @@ type User {
     id: String
     age: Int
 }
+
