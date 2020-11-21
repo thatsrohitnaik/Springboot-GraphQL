@@ -22,14 +22,9 @@ public class UsersController implements UsersControllerInterface {
     @Autowired
     GraphqlService graphqlService;
 
-    @GetMapping("/users")
-    @Override
-    public List<Users> getUsers() {
-        return userServices.getUsers();
-    }
-
     @PostMapping("/users")
-    public ResponseEntity<Object> getAllBooks(@RequestBody String query) {
+    @Override
+    public ResponseEntity<Object> getAllUsers(@RequestBody String query) {
         ExecutionResult execute = graphqlService.getGraphQL().execute(query);
         return new ResponseEntity<>(execute, HttpStatus.OK);
     }

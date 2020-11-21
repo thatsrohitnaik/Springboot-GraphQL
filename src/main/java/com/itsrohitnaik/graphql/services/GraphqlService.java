@@ -31,8 +31,6 @@ public class GraphqlService {
 
     private GraphQL graphQL;
 
-
-
     @PostConstruct
     private void GraphqlService() throws IOException {
         File schemaFile = resource.getFile();
@@ -42,7 +40,6 @@ public class GraphqlService {
         graphQL = GraphQL.newGraphQL(schema).build();
     }
 
-
     private RuntimeWiring buildRuntimeWiring() {
         return RuntimeWiring.newRuntimeWiring()
                 .type("Query", typeWiring -> typeWiring
@@ -51,7 +48,6 @@ public class GraphqlService {
                 )
                 .build();
     }
-
 
     public GraphQL getGraphQL() {
         return graphQL;
