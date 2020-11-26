@@ -22,7 +22,7 @@ public class UsersController implements UsersControllerInterface {
     @Autowired
     GraphqlService graphqlService;
 
-    @PostMapping("/users")
+    @PostMapping("/graphql")
     @Override
     public ResponseEntity<Object> getAllUsers(@RequestBody String query) {
         ExecutionResult execute = graphqlService.getGraphQL().execute(query);
